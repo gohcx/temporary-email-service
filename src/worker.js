@@ -43,6 +43,21 @@ async function fetch(request, env, ctx) {
                   <meta name="description" content="Temp Mail">
                   <title>Temp Mail</title>
                   <link rel="icon" href="https://img.icons8.com/?size=256&id=LPcVDft9Isqt&format=png">
+                  <style>
+                  .btn-bd-primary {
+                    --bs-btn-font-weight: 600 !important;
+                    --bs-btn-color: #fff !important; 
+                    --bs-btn-bg: #712cf9 !important;
+                    --bs-btn-border-color: #712cf9 !important;
+                    --bs-btn-hover-color: #fff !important;
+                    --bs-btn-hover-bg: #6528e0 !important;
+                    --bs-btn-hover-border-color: #6528e0 !important;
+                    --bs-btn-focus-shadow-rgb: rgb(112.520718,44.062154,249.437846) !important;
+                    --bs-btn-active-color: #fff !important;
+                    --bs-btn-active-bg: #5a23c8 !important;
+                    --bs-btn-active-border-color: #5a23c8 !important;
+                }
+                  </style>
                   <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
                   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
                 </head>
@@ -109,11 +124,11 @@ async function fetch(request, env, ctx) {
                             <p>Use this email to sign up for services, verify accounts, and more.</p>
                             <div class="container-fluid" style="height: 10px"></div>
                             <div id="button_group">
-                              <button class="btn btn-primary" onclick="start_email()" id="start_button">Start now</button>
+                              <button class="btn" onclick="start_email()" id="start_button">Start now</button>
                             </div>
                           </div>  
                           <div class="col-md-6" style="height: auto !important;" id="inbox">
-                            <img src="https://d9b3b4r2.stackpathcdn.com/wp-content/uploads/2022/02/Add-email-button-email-gif-1.gif" width="100%" alt="Waiting mail">
+                            <img src="https://media.tenor.com/xc_PE3FS8dsAAAAi/everyday-canadian-box.gif" width="100%" alt="Waiting mail">
                           </div>
                         </div>
                       </div>
@@ -230,10 +245,12 @@ async function fetch(request, env, ctx) {
                     if (theme == "dark") {
                         document.getElementById("line-2").style.border = "1px solid #ffffff";
                         document.getElementById("line-3").style.border = "1px solid #ffffff";
+                        document.getElementById('start_button').classList.add('btn-bd-primary');
                         document.getElementById("bodyid").setAttribute("data-bs-theme", "dark");
                     } else {
                         document.getElementById("line-2").style.border = "1px solid #000000";
                         document.getElementById("line-3").style.border = "1px solid #000000";
+                        document.getElementById('start_button').classList.add('btn-dark');
                         document.getElementById("bodyid").setAttribute("data-bs-theme", "light");
                     }
                     function changeTheme() {
@@ -245,7 +262,7 @@ async function fetch(request, env, ctx) {
                         }
                         document.getElementById('line-2').style.border = '1px solid #000000';
                         document.getElementById('line-3').style.border = '1px solid #000000';
-                        document.getElementById('start_button').classList.remove('btn-primary');
+                        document.getElementById('start_button').classList.remove('btn-bd-primary');
                         document.getElementById('start_button').classList.add('btn-dark');
                         html.setAttribute('data-bs-theme', 'light');
                       } else {
@@ -256,7 +273,7 @@ async function fetch(request, env, ctx) {
                         document.getElementById('line-2').style.border = '1px solid #ffffff';
                         document.getElementById('line-3').style.border = '1px solid #ffffff';
                         document.getElementById('start_button').classList.remove('btn-dark');
-                        document.getElementById('start_button').classList.add('btn-primary');
+                        document.getElementById('start_button').classList.add('btn-bd-primary');
                         html.setAttribute('data-bs-theme', 'dark');
                       }
                     }
