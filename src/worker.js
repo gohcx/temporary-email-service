@@ -51,7 +51,7 @@ async function fetch(request, env, ctx) {
                     <section id="nav" class="my-3">
                     <nav class="navbar navbar-expand-lg">
                       <div class="container-fluid">
-                        <a class="navbar-brand my-auto disabled" href="/"><img height="40px" src="https://icons.veryicon.com/png/o/business/oa-office/mail-227.png"/>${env.website_name ? env.website_name : "Temp Mail"}</a>
+                        <a class="navbar-brand my-auto disabled" href="/"><img height="40px" src="https://img.icons8.com/?size=128&id=LPcVDft9Isqt&format=png" class="mx-2"/>${env.website_name ? env.website_name : "Temp Mail"}</a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
                           <span class="navbar-toggler-icon"></span>
                         </button>
