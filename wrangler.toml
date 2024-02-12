@@ -1,0 +1,14 @@
+name = "temp-mail"
+main = "src/worker.js"
+compatibility_date = "2024-02-01"
+workers_dev = true
+node_compat = true
+
+routes = []
+kv_namespaces = []
+
+[vars]
+website_name= "example.com"
+email_domain = '["example.com"]'
+contact_email = "contact@example.com"
+abuse_email = "abuse@example.com"

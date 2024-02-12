@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html id="htmlid" lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="description" content="Temp Mail">
+    <title>Temp Mail</title>
+    <style>
+
+    </style>
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body id="bodyid" style="max-height: 90vh !important;">
+    <div class="container">
+        <section id="nav" class="my-3">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand my-auto disabled" href="/"><img height="40px"
+                            src="https://icons.veryicon.com/png/o/business/oa-office/mail-227.png" />hhias.tech</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
+                        aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbar">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item mx-1">
+                                <a class="nav-link active" aria-current="page" href="/about">About</a>
+                            </li>
+                            <li class="nav-item mx-1">
+                                <a class="nav-link active" aria-current="page" href="/privacy">Privacy</a>
+                            </li>
+                            <li class="nav-item mx-1">
+                                <a class="nav-link active" aria-current="page" href="/terms">Terms</a>
+                            </li>
+                            <li class="nav-item mx-1">
+                                <a class="nav-link active" href="#" aria-current="page"
+                                    onclick="navigator.share({title: 'Temp-mail', url: window.location.href}).then()">Share</a>
+                            </li>
+                            <li class="nav-item mx-1">
+                                <a class="nav-link active" href="https://www.buymeacoffee.com/gohcx"
+                                    target="__blank">Donate</a>
+                            </li>
+                            <li class="nav-item mx-1">
+                                <button class="nav-link active" onclick="changeTheme()" href="#">Theme</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <hr id="line-2" style="border: 1px solid #000000;" />
+            <div class="container-fluid" style="height: 10px"></div>
+        </section>
+        <section id="content" class="my-3">
+            <div class="container-fluid" style="height: 20px"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <strong class="h1">About</strong>
+                        <hr id="line-1" style="border: 1px solid #000000;" width="50%" />
+                        <p class="my-4 fs-5"><a href="/">Tech Mail</a> provide temporary email service</p>
+                        <p class="my-4 fs-5">You are allowed to use email for registration/verification and more</p>
+                        <p class="my-4 fs-5"><text style="color: red;">Notice</text>: We do not recommend using this
+                            email to link personal information</p>
+                        <p class="my-4 fs-5">This service is host on Cloudflare Workers</p>
+                    </div>
+                    <div class="container-fluid" style="height: 30px;"></div>
+                    <div class="col-12">
+                        <strong class="h1">Copyright</strong>
+                        <hr id="line-3" style="border: 1px solid #000000;" width="50%" />
+                        <p class="my-4 fs-5">Open Source on <a href="https://github.com/gohchengxian"
+                                target="__blank">Github</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="content" class="fixed-bottom ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                        <p>© 2024 Temp Mail</p>
+                    </div>
+                    <div class="col-6">
+                        <div class="d-flex justify-content-end">
+                            <a href="https://github.com/gohchengxian" target="__blank" class="nav-link"><i
+                                    class="fa-brands fa-github"></i> Github</a>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    </div>
+    <script>
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+        let theme = getCookie("theme");
+        if (theme == "dark") {
+            document.getElementById("line-1").style.border = "1px solid #ffffff";
+            document.getElementById("line-2").style.border = "1px solid #ffffff";
+            document.getElementById("line-3").style.border = "1px solid #ffffff";
+            document.getElementById("bodyid").setAttribute("data-bs-theme", "dark");
+        } else {
+            document.getElementById("line-1").style.border = "1px solid #000000";
+            document.getElementById("line-2").style.border = "1px solid #000000";
+            document.getElementById("line-3").style.border = "1px solid #000000";
+            document.getElementById("bodyid").setAttribute("data-bs-theme", "light");
+        }
+        function changeTheme() {
+            let theme = getCookie("theme");
+            if (theme == "dark") {
+                setCookie("theme", "light", 365);
+                document.getElementById("line-1").style.border = "1px solid #000000";
+                document.getElementById("line-2").style.border = "1px solid #000000";
+                document.getElementById("line-3").style.border = "1px solid #000000";
+                document.getElementById("bodyid").setAttribute("data-bs-theme", "light");
+            } else {
+                setCookie("theme", "dark", 365);
+                document.getElementById("line-1").style.border = "1px solid #ffffff";
+                document.getElementById("line-2").style.border = "1px solid #ffffff";
+                document.getElementById("line-3").style.border = "1px solid #ffffff";
+                document.getElementById("bodyid").setAttribute("data-bs-theme", "dark");
+            }
+        }
+    </script>
+</body>
+
+</html>
