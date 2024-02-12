@@ -125,7 +125,7 @@ async function fetch(request, env, ctx) {
                           </div>
                           <div class="col-6">
                             <div class="d-flex justify-content-end">
-                              <a href="https://github.com/gohchengxian" target="__blank" class="nav-link"><i class="fa-brands fa-github"></i> Github</a>
+                              <a href="https://github.com/gohchengxian/temporary-email-service" target="__blank" class="nav-link"><i class="fa-brands fa-github"></i> Github</a>
                             </div>
                           </div>
                         </div>
