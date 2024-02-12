@@ -42,6 +42,7 @@ async function fetch(request, env, ctx) {
                   <meta charset="UTF-8">
                   <meta name="description" content="Temp Mail">
                   <title>Temp Mail</title>
+                  <link rel="icon" href="https://img.icons8.com/?size=256&id=LPcVDft9Isqt&format=png">
                   <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
                   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
                 </head>
