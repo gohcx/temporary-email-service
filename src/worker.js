@@ -109,7 +109,7 @@ async function fetch(request, env, ctx) {
                             <p>Use this email to sign up for services, verify accounts, and more.</p>
                             <div class="container-fluid" style="height: 10px"></div>
                             <div id="button_group">
-                              <button class="btn btn-dark" onclick="start_email()" id="start_button">Start now</button>
+                              <button class="btn btn-primary" onclick="start_email()" id="start_button">Start now</button>
                             </div>
                           </div>  
                           <div class="col-md-6" style="height: auto !important;" id="inbox">
