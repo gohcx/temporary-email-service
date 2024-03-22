@@ -217,7 +217,7 @@ async function fetch(request, env, ctx) {
                       document.getElementById('start_button').disabled = false;
                       document.getElementById('temp-emailaddress').value = '';
                       document.getElementById('copy-email-button').disabled = true;
-                      document.getElementById('inbox').innerHTML = '<img src="https://d9b3b4r2.stackpathcdn.com/wp-content/uploads/2022/02/Add-email-button-email-gif-1.gif" width="100%" alt="Waiting mail">';
+                      document.getElementById('inbox').innerHTML = '<img src="https://media.tenor.com/xc_PE3FS8dsAAAAi/everyday-canadian-box.gif" width="100%" alt="Waiting mail">';
                       document.getElementById('button_group').innerHTML = '<button class="btn btn-dark" onclick="start_email()" id="start_button">Start now</button>';
                       websocket.close();
                     };
