@@ -6,6 +6,16 @@
     <meta charset="UTF-8">
     <meta name="description" content="Temp Mail">
     <title>Temp Mail</title>
+    <meta name="description" content="Learn in detail about our privacy policy, how we collect, use, and protect your personal information. We are committed to safeguarding your privacy rights and ensuring a secure experience when using our temporary email reception service. ">
+    <meta name="keywords" content="隐私政策, 个人信息保护, 数据安全, Privacy policy, personal information protection, data security,临时邮件, 邮件接收, 验证码接收, 匿名邮箱, 保护隐私, Temporary email, email reception, verification code reception, anonymous email, privacy protection">
+    <!-- Open Graph Protocol (OGP) meta tags for Facebook, Discord, etc. -->
+    <meta name="og:description" content="Learn in detail about our privacy policy, how we collect, use, and protect your personal information. We are committed to safeguarding your privacy rights and ensuring a secure experience when using our temporary email reception service. ">
+    <meta property="og:title" content="Temporary Email Reception Service - Fast and Secure">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://anons.email/privacy">
+    <!-- Twitter Card meta tags for Twitter preview -->
+    <meta name="twitter:title" content="Temporary Email Reception Service - Fast and Secure">
+    <meta name="twitter:description" content="Learn in detail about our privacy policy, how we collect, use, and protect your personal information. We are committed to safeguarding your privacy rights and ensuring a secure experience when using our temporary email reception service. ">
     <link rel="icon" href="https://img.icons8.com/?size=256&id=LPcVDft9Isqt&format=png">
     <style>
 
@@ -20,8 +30,8 @@
         <section id="nav" class="my-3">
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
-                    <a class="navbar-brand my-auto disabled" href="/"><img height="40px"
-                        src="https://img.icons8.com/?size=128&id=LPcVDft9Isqt&format=png" class="mx-2"/>hhias.tech</a>
+                    <a class="navbar-brand my-auto disabled" href="/" id="website_name"><img height="40px"
+                            src="https://img.icons8.com/?size=128&id=LPcVDft9Isqt&format=png" class="mx-2" alt="webpage-icon"/></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
                         aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -42,7 +52,7 @@
                                     onclick="navigator.share({title: 'Temp-mail', url: window.location.href}).then()">Share</a>
                             </li>
                             <li class="nav-item mx-1">
-                                <a class="nav-link active" href="https://www.buymeacoffee.com/gohcx"
+                                <a class="nav-link active" href="https://ko-fi.com/gohcx"
                                     target="__blank">Donate</a>
                             </li>
                             <li class="nav-item mx-1">
@@ -71,16 +81,20 @@
                         <p>We collect your theme to provide you with a better user experience.</p>
                         <div class="container-fluid" style="height: 20px"></div>
                         <h4 class="my-4 text-decoration-underline" id="3">3. Storage and Security:</h4>
-                        <p>We store your theme in your browser cookie. We will do our best to protect your email content. However, no method of transmission over the internet or electronic storage is 100% secure.</p>
+                        <p>We store your theme in your browser cookie. We will do our best to protect your email
+                            content. However, no method of transmission over the internet or electronic storage is 100%
+                            secure.</p>
                         <div class="container-fluid" style="height: 20px"></div>
                         <h4 class="my-4 text-decoration-underline" id="4">4. Data Sharing:</h4>
                         <p>We do not share your theme or email content with any third party, unless required by law.</p>
                         <div class="container-fluid" style="height: 20px"></div>
                         <h4 class="my-4 text-decoration-underline" id="5">5. Cookies and Tracking Technologies:</h4>
-                        <p>We use cookies to store your theme preference. If you disabled cookies in your browser, we will not be able to store your theme preference.</p>
+                        <p>We use cookies to store your theme preference. If you disabled cookies in your browser, we
+                            will not be able to store your theme preference.</p>
                         <div class="container-fluid" style="height: 20px"></div>
                         <h4 class="my-4 text-decoration-underline" id="6">6. User Rights:</h4>
-                        <p>You have the right to access, correct, or delete your data. Contact us at <a id="contact-email" href="mailto:">[contact@email.com]</a> for assistance.</p>
+                        <p>You have the right to access, correct, or delete your data. Contact us at <a
+                                id="contact-email" href="mailto:">[contact@email.com]</a> for assistance.</p>
                         <div class="container-fluid" style="height: 20px"></div>
                         <h4 class="my-4 text-decoration-underline" id="7">7. Changes to Privacy Policy:</h4>
                         <p>We reserve the right to modify this privacy policy. Updates will be posted on this page.</p>
@@ -104,14 +118,17 @@
                     </div>
                     <div class="col-6">
                         <div class="d-flex justify-content-end">
-                            <a href="https://github.com/gohchengxian/temporary-email-service" target="__blank" class="nav-link"><i
-                                    class="fa-brands fa-github"></i> Github</a>
+                            <a href="https://github.com/gohcx/temporary-email-service" target="__blank"
+                                class="nav-link"><i class="fa-brands fa-github"></i> Github</a>
                         </div>
                     </div>
                 </div>
         </section>
     </div>
     <script>
+        fetch('/website_name').then(res => res.text()).then(res => {
+            document.getElementById("website_name").innerHTML += res
+        });
         fetch('/contact_email').then(response => response.text()).then(data => {
             document.getElementById('contact-email').innerText = data;
             document.getElementById('contact-email').href = 'mailto:' + data;

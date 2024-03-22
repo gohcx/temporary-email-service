@@ -8,7 +8,9 @@ routes = []
 kv_namespaces = []
 
 [vars]
-website_name= "example.com"
-email_domain = '["example.com"]'
-contact_email = "contact@example.com"
-abuse_email = "abuse@example.com"
+website_name= "Anonymous mail"
+email_domain = '["anons.email"]'
+custom_email_domain = '["ct.anons.email"]'
+contact_email = "contact@anons.email"
+abuse_email = "abuse@anons.email"
+dropMail_email = "drop@anons.email"

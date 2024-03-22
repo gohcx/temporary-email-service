@@ -6,12 +6,8 @@
 const PostalMime = require('postal-mime');
 
 export default {
-  fetch, email
+  fetch: fetchs, email
 }
-
-function GetPathName(url) {
-  return new URL(url).pathname + new URL(url).search;
-};
 
 function generateEmailUsername(domain) {
   var adjective = ["Enthusiastic", "Intelligent", "Creative", "Hardworking", "Happy", "Positive", "Energetic", "Humorous", "Thoughtful", "Quiet", "Pleasant", "Interesting", "Efficient", "Kind", "Zealous", "Independent", "Humble", "Beautiful", "Brave", "Lovely", "Unique", "Ardent", "Blissful", "Steadfast", "Joyful", "Honest", "Versatile", "Shrewd", "Meticulous", "Serene", "Curious", "Outgoing", "Considerate", "Sensitive", "Witty", "Equal", "Reliable", "Gentle", "Generous", "Balanced", "Resolute", "Flexible", "Dedicated", "Tolerant", "Calm", "Cool-headed", "Hopeful", "Perfect", "Shy", "Tranquil", "Cozy", "Solid", "Noble", "Capricious", "Tender", "Sharp", "Ambitious", "Pleased", "Dazzling", "Blissful", "Changeable", "Focused", "Comfortable", "Dynamic", "Adaptable", "Crazy", "Independent-minded", "Energetic", "Passionate", "Soft", "Inspirational", "Hardworking", "Confident", "Efficient", "Tenacious", "Excited", "Capricious", "Steady", "Infectious", "Enthusiastic", "Uninhibited", "Humorous", "Artistic", "Personable", "Alert", "Lively", "Eager", "Charismatic", "Friendly", "Charming", "Warm-hearted", "Understanding", "Deeply_humorous", "Charismatic", "Clever", "Blissful", "Extroverted", "Introverted", "Cautious", "Insightful"]
@@ -23,8 +19,11 @@ function generateEmailUsername(domain) {
 import aboutHTML from './about.html';
 import terms from './terms.html';
 import privacy from './privacy.html';
+import sitemap from './sitemap.html';
+import robots from './robots.txt';
+import custom_mail_html from './custom.html';
 
-async function fetch(request, env, ctx) {
+async function fetchs(request, env, ctx) {
   const url = new URL(request.url);
   try {
     var upgradeHeader = request.headers.get('Upgrade');
@@ -40,8 +39,17 @@ async function fetch(request, env, ctx) {
                 <head>
                   <meta name="viewport" content="width=device-width, initial-scale=1">
                   <meta charset="UTF-8">
-                  <meta name="description" content="Temp Mail">
-                  <title>Temp Mail</title>
+                  <meta name="description" content="Welcome to our temporary email reception service. Quickly and securely receive temporary email addresses here. Receive verification codes and validation emails anytime, anywhere, protecting your real email privacy.">
+                  <meta name="keywords" content="临时邮件, 邮件接收, 验证码接收, 匿名邮箱, 保护隐私, Temporary email, email reception, verification code reception, anonymous email, privacy protection">
+                  <!-- Open Graph Protocol (OGP) meta tags for Facebook, Discord, etc. -->
+                  <meta property="og:title" content="Temporary Email Reception Service - Fast and Secure">
+                  <meta name="og:description" content="Welcome to our temporary email reception service. Quickly and securely receive temporary email addresses here. Receive verification codes and validation emails anytime, anywhere, protecting your real email privacy.">
+                  <meta property="og:type" content="website">
+                  <meta property="og:url" content="https://anons.email/">
+                  <!-- Twitter Card meta tags for Twitter preview -->
+                  <meta name="twitter:title" content="Temporary Email Reception Service - Fast and Secure">
+                  <meta name="twitter:description" content="Welcome to our temporary email reception service. Quickly and securely receive temporary email addresses here. Receive verification codes and validation emails anytime, anywhere, protecting your real email privacy.">
+                  <title>Temporary Email Reception Service - Fast and Secure</title>
                   <link rel="icon" href="https://img.icons8.com/?size=256&id=LPcVDft9Isqt&format=png">
                   <style>
                   .btn-bd-primary {
@@ -66,7 +74,7 @@ async function fetch(request, env, ctx) {
                     <section id="nav" class="my-3">
                     <nav class="navbar navbar-expand-lg">
                       <div class="container-fluid">
-                        <a class="navbar-brand my-auto disabled" href="/"><img height="40px" src="https://img.icons8.com/?size=128&id=LPcVDft9Isqt&format=png" class="mx-2"/>${env.website_name ? env.website_name : "Temp Mail"}</a>
+                        <a class="navbar-brand my-auto disabled" href="/"><img alt="webpage-icon" height="40px" src="https://img.icons8.com/?size=128&id=LPcVDft9Isqt&format=png" class="mx-2"/>${env.website_name ? env.website_name : "Temp Mail"}</a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
                           <span class="navbar-toggler-icon"></span>
                         </button>
@@ -85,7 +93,7 @@ async function fetch(request, env, ctx) {
                               <a class="nav-link active" href="#" aria-current="page" onclick="navigator.share({title: 'Temp-mail', url: window.location.href}).then()">Share</a>
                             </li>
                             <li class="nav-item mx-1">
-                              <a class="nav-link active" href="https://www.buymeacoffee.com/gohcx" target="__blank">Donate</a>
+                              <a class="nav-link active" href="https://ko-fi.com/gohcx" target="__blank">Donate</a>
                             </li>
                             <li class="nav-item mx-1">
                               <button class="nav-link active" onclick="changeTheme()" href="#">Theme</button>
@@ -97,7 +105,7 @@ async function fetch(request, env, ctx) {
                     <hr id="line-2" style="border: 1px solid #000000;"/>
                     <div class="container-fluid" style="height: 10px"></div>
                     </section>
-                    <section id="content" class="my-3" style="max-height: 30% !important;">
+                    <section id="content" class="my-3" style="min-height: 75vh !important;">
                       <div class="container">
                         <div class="row">
                           <div class="col-md-6">
@@ -125,6 +133,7 @@ async function fetch(request, env, ctx) {
                             <div class="container-fluid" style="height: 10px"></div>
                             <div id="button_group">
                               <button class="btn" onclick="start_email()" id="start_button">Start now</button>
+                              <a class="btn mx-1 text-dark" href="/custom_mail" id='custom_email_button'>Custom email</a>
                             </div>
                           </div>  
                           <div class="col-md-6" style="height: auto !important;" id="inbox">
@@ -133,7 +142,8 @@ async function fetch(request, env, ctx) {
                         </div>
                       </div>
                     </section>
-                    <section id="content" class="fixed-bottom ">
+                    <section id="content" class="footer">
+                      <div class="container-fluid" style="height: 30px;"></div>
                       <div class="container">
                         <div class="row">
                           <div class="col-6">
@@ -141,22 +151,24 @@ async function fetch(request, env, ctx) {
                           </div>
                           <div class="col-6">
                             <div class="d-flex justify-content-end">
-                              <a href="https://github.com/gohchengxian/temporary-email-service" target="__blank" class="nav-link"><i class="fa-brands fa-github"></i> Github</a>
+                              <a href="https://github.com/gohcx/temporary-email-service" target="__blank" class="nav-link"><i class="fa-brands fa-github"></i> Github</a>
                             </div>
                           </div>
                         </div>
                     </section>
                   </div>
                   <script>
-                  var start_email = false;
+                  var start_emails = false;
                   var domain_list = ${env.email_domain ? env.email_domain : '["example.com"]'} ;
                   var domainHTML = '';
                   for (var i = 0; i < domain_list.length; i++) {
                     domainHTML += '<option value="' + domain_list[i] + '">' + domain_list[i] + '</option>';
                   }
                   document.getElementById('selectDomain').innerHTML = domainHTML;
+                  var request_data;
+                  var websocket;
                     function start_email() {
-                      start_email = true;
+                      start_emails = true;
                       document.getElementById('start_button').disabled = true;
                       fetch('/start_email', {
                         method: 'POST',
@@ -167,15 +179,21 @@ async function fetch(request, env, ctx) {
                       }).then(owo => owo.text()).then(async res => {
                         document.getElementById('temp-emailaddress').value = res;
                         document.getElementById('copy-email-button').disabled = false;
-                        const websocket = new WebSocket('wss://' + window.location.host);
+                        websocket = new WebSocket('wss://' + window.location.host);
                         websocket.onopen = function() {
                           console.log(res)
                           console.log('WebSocket is open now.');
                           websocket.send(res);
                         };
-                        var request_data;
                         websocket.onclose = function(event) {
-                          start_email = false;
+                          start_emails = false;
+                          fetch('/stop_email', {
+                            method: 'POST',
+                            headers: {
+                              'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({email: res})
+                          });
                           document.getElementById('temp-emailaddress').value = '';
                           document.getElementById('copy-email-button').disabled = true;
                           document.getElementById('start_button').disabled = false;
@@ -185,18 +203,16 @@ async function fetch(request, env, ctx) {
                             console.log('Connection died');
                           }
                           clearInterval(request_data);
-                          fetch('/stop_email', {
-                            method: 'POST',
-                            headers: {
-                              'Content-Type': 'application/json'
-                            },
-                            body: JSON.stringify({email: res})
-                          });
                         };
                         websocket.onmessage = async function(event) {
                           request_data = catchEmail(res);
                           if(!event.data.error) {
-                            document.getElementById('inbox').innerHTML = "<h1 class='my-3'>Mail Box</h1><hr id='line-1' style='border: 1px solid #000000;' class='mb-3'/>";
+                            var theme = getCookie("theme");
+                            if(theme == "dark") {
+                              document.getElementById('inbox').innerHTML = "<h1 class='my-3'>Mail Box</h1><hr id='line-1' style='border: 1px solid #ffffff;' class='mb-3'/>";
+                            } else {
+                              document.getElementById('inbox').innerHTML = "<h1 class='my-3'>Mail Box</h1><hr id='line-1' style='border: 1px solid #000000;' class='mb-3'/>";
+                            }
                             document.getElementById('inbox').innerHTML += '<div class="mx-2 my-2 accordion overflow-y-auto" id="inbox-email"></div>';    
                             document.getElementById('button_group').innerHTML += '<button class="btn btn-danger mx-3" id="end-button" onclick="closeMail()">End Mail</button>';
                           } else {
@@ -206,7 +222,8 @@ async function fetch(request, env, ctx) {
                       });
                     };
                     function closeMail() {
-                      start_email = false;
+                      start_emails = false;
+                      clearInterval(request_data);
                       fetch('/stop_email', {
                         method: 'POST',
                         headers: {
@@ -218,11 +235,14 @@ async function fetch(request, env, ctx) {
                       document.getElementById('temp-emailaddress').value = '';
                       document.getElementById('copy-email-button').disabled = true;
                       document.getElementById('inbox').innerHTML = '<img src="https://media.tenor.com/xc_PE3FS8dsAAAAi/everyday-canadian-box.gif" width="100%" alt="Waiting mail">';
-                      document.getElementById('button_group').innerHTML = '<button class="btn btn-dark" onclick="start_email()" id="start_button">Start now</button>';
+                      if(theme == "dark") {
+                        document.getElementById('button_group').innerHTML = '<button class="btn btn-bd-primary" onclick="start_email()" id="start_button">Start now</button>';
+                      } else {
+                        document.getElementById('button_group').innerHTML = '<button class="btn btn-dark" onclick="start_email()" id="start_button">Start now</button>';
+                      }
                       websocket.close();
                     };
                     function catchEmail(email) {
-                      console.log("catchEmail");
                       var interval = setInterval(()  => {
                         fetch('/email', {
                           method: 'POST',
@@ -246,18 +266,20 @@ async function fetch(request, env, ctx) {
                         document.getElementById("line-2").style.border = "1px solid #ffffff";
                         document.getElementById("line-3").style.border = "1px solid #ffffff";
                         document.getElementById('start_button').classList.add('btn-bd-primary');
+                        document.getElementById("custom_email_button").style.backgroundColor = "#15F5BA";
                         document.getElementById("bodyid").setAttribute("data-bs-theme", "dark");
                     } else {
                         document.getElementById("line-2").style.border = "1px solid #000000";
                         document.getElementById("line-3").style.border = "1px solid #000000";
                         document.getElementById('start_button').classList.add('btn-dark');
+                        document.getElementById("custom_email_button").style.backgroundColor = "#15F5BA";
                         document.getElementById("bodyid").setAttribute("data-bs-theme", "light");
                     }
                     function changeTheme() {
                       var html = document.getElementById('bodyid');
                       if (html.getAttribute('data-bs-theme') == 'dark') {
                         setCookie("theme", "light", 365);
-                        if(start_email) {
+                        if(start_emails) {
                           document.getElementById('line-1').style.border = '1px solid #000000';
                         }
                         document.getElementById('line-2').style.border = '1px solid #000000';
@@ -267,7 +289,7 @@ async function fetch(request, env, ctx) {
                         html.setAttribute('data-bs-theme', 'light');
                       } else {
                         setCookie("theme", "dark", 365);
-                        if(start_email) {
+                        if(start_emails) {
                           document.getElementById('line-1').style.border = '1px solid #ffffff';
                         }
                         document.getElementById('line-2').style.border = '1px solid #ffffff';
@@ -337,6 +359,32 @@ async function fetch(request, env, ctx) {
                   headers: { 'content-type': 'text/plain' },
                 });
                 break;
+              case '/robots.txt':
+                return new Response(robots, {
+                  headers: { 'content-type': 'text/plain' },
+                });
+                break;
+              case '/sitemap.xml':
+                var text = sitemap;
+                return new Response(text, {
+                  headers: { 'content-type': 'text/xml' },
+                });
+                break;
+              case '/favicon.ico':
+                return Response.redirect('https://img.icons8.com/?size=256&id=LPcVDft9Isqt&format=png', 301);
+                break;
+              case '/custom_mail':
+                return new Response(custom_mail_html, {
+                  headers: { 'content-type': 'text/html;charset=UTF-8' },
+                });
+                break;
+              case '/custom_mail_info':
+                var json = {};
+                json['email_domain'] = JSON.parse(env.custom_email_domain);
+                json['website_name'] = env.website_name;
+                return new Response(JSON.stringify(json), {
+                  headers: { 'content-type': 'application/json' },
+                });
               default:
                 return Response.redirect((url.hostname), 301);
             };
@@ -383,6 +431,247 @@ async function fetch(request, env, ctx) {
                   return new Response(JSON.stringify(email), {
                     headers: { 'content-type': 'application/json' },
                   });
+                };
+                break;
+              case '/check_ct_email':
+                var reqBody = await request.json()
+                var data = await env.kv4email.get('customEmail');
+                if (!data || data == undefined || data == null || data == 'undefined' || data == 'null' || data == '[]' || data == '""' || data == '') {
+                  return new Response('Username available', { status: 200 });
+                } else {
+                  var data_json = JSON.parse(data);
+                  if (data_json.filter(owo => owo.email === reqBody['email']).length === 0) {
+                    return new Response('Username available', { status: 200 });
+                  } else {
+                    return new Response('Username unavailable', { status: 200 });
+                  };
+                }
+                break;
+              case '/verifyWebhook':
+                const init = {
+                  headers: {
+                    "content-type": "application/json;charset=UTF-8",
+                  },
+                };
+                var reqBody = await request.json()
+                var data = await env.kv4email.get('customEmail');
+                if (!data || data == undefined || data == null || data == 'undefined' || data == 'null' || data == '[]' || data == '""' || data == '') {
+                  if (reqBody['webhook'].startsWith('https://discord.com/api/webhooks/')) {
+                    var verify_code = Math.floor(100000 + Math.random() * 900000);
+                    try {
+                      var fetch_webhook = await fetch(reqBody['webhook'], {
+                        method: 'POST',
+                        headers: {
+                          'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                          username: 'anons.email',
+                          avatar_url: 'https://img.icons8.com/?size=256&id=LPcVDft9Isqt&format=png',
+                          content: `Verify code: ${verify_code}`
+                        })
+                      });
+                      if (fetch_webhook.status !== 204) {
+                        var json = {};
+                        json['error'] = true;
+                        json['message'] = 'Invalid webhook';
+                        return new Response(JSON.stringify(json), { status: 400, headers: { 'content-type': 'application/json' } });
+                      } else {
+                        var json = {};
+                        json['error'] = false;
+                        json['message'] = 'success';
+                        json['verify_code'] = verify_code;
+                        return new Response(JSON.stringify(json), {
+                          headers: { 'content-type': 'application/json' },
+                        });
+                      };
+                    } catch (error) {
+                      var json = {};
+                      json['error'] = true;
+                      json['message'] = 'Invalid webhook';
+                      return new Response(JSON.stringify(json), { status: 400, headers: { 'content-type': 'application/json' } });
+                    }
+                  } else {
+                    var json = {};
+                    json['error'] = true;
+                    json['message'] = 'Invalid webhook';
+                    return new Response(JSON.stringify(json), { status: 400, headers: { 'content-type': 'application/json' } });
+                  }
+                } else {
+                  var data_json = JSON.parse(data);
+                  var json = {};
+                  if (data_json.filter(owo => owo.email === reqBody['email']).length !== 0) {
+                    json['error'] = true;
+                    json['message'] = 'Username unavailable';
+                    return new Response(JSON.stringify(json), { status: 404, headers: { 'content-type': 'application/json' } });
+                  } else {
+                    var verify_code = Math.floor(100000 + Math.random() * 900000);
+                    try {
+                      var fetch_webhook = await fetch(reqBody['webhook'], {
+                        method: 'POST',
+                        headers: {
+                          'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                          username: 'anons.email',
+                          avatar_url: 'https://img.icons8.com/?size=256&id=LPcVDft9Isqt&format=png',
+                          content: `Verify code: ${verify_code}`
+                        })
+                      });
+                      if (fetch_webhook.status !== 204) {
+                        var json = {};
+                        json['error'] = true;
+                        json['message'] = 'Invalid webhook';
+                        return new Response(JSON.stringify(json), { status: 400, headers: { 'content-type': 'application/json' } });
+                      } else {
+                        var json = {};
+                        json['error'] = false;
+                        json['message'] = 'success';
+                        json['verify_code'] = verify_code;
+                        return new Response(JSON.stringify(json), {
+                          headers: { 'content-type': 'application/json' },
+                        });
+                      };
+                    } catch (error) {
+                      var json = {};
+                      json['error'] = true;
+                      json['message'] = 'Invalid webhook';
+                      return new Response(JSON.stringify(json), { status: 400, headers: { 'content-type': 'application/json' } });
+                    }
+                  }
+                };
+                break;
+              case '/connectWebhookCTEmail':
+                var reqBody = await request.json()
+                var data = await env.kv4email.get('customEmail');
+                if (!data || data == undefined || data == null || data == 'undefined' || data == 'null' || data == '[]' || data == '""' || data == '') {
+                  var request = await fetch(reqBody['webhook']);
+                  if (request.status !== 200) {
+                    var json = {};
+                    json['error'] = true;
+                    json['message'] = 'Invalid webhook';
+                    return new Response(JSON.stringify(json), { status: 400, headers: { 'content-type': 'application/json' } });
+                  } else {
+                    var json = {};
+                    json['error'] = false;
+                    json['message'] = 'success';
+                    json['webhook'] = reqBody['webhook'];
+                    json['email'] = reqBody['email'];
+                    env.kv4email.put('customEmail', JSON.stringify([{ email: reqBody['email'], webhook: reqBody['webhook'], type: 'discord_webhook' }]));
+                    return new Response(JSON.stringify(json), { status: 200, headers: { 'content-type': 'application/json' } });
+                  };
+                } else {
+                  var data = JSON.parse(data);
+                  if (data.filter(owo => owo.email === reqBody['email']).length !== 0) {
+                    var json = {};
+                    json['error'] = true;
+                    json['message'] = 'Username unavailable';
+                    return new Response(JSON.stringify(json), { status: 404, headers: { 'content-type': 'application/json' } });
+                  } else {
+                    var request = await fetch(reqBody['webhook']);
+                    if (request.status !== 200) {
+                      var json = {};
+                      json['error'] = true;
+                      json['message'] = 'Invalid webhook';
+                      return new Response(JSON.stringify(json), { status: 400, headers: { 'content-type': 'application/json' } });
+                    } else {
+                      var json = {};
+                      json['error'] = false;
+                      json['message'] = 'success';
+                      json['webhook'] = reqBody['webhook'];
+                      json['email'] = reqBody['email'];
+                      env.kv4email.put('customEmail', JSON.stringify([{ email: reqBody['email'], webhook: reqBody['webhook'], type: 'discord_webhook' }]));
+                      return new Response(JSON.stringify(json), { status: 200, headers: { 'content-type': 'application/json' } });
+                    };
+                  };
+                };
+                break;
+              case '/verifyEmail':
+                var reqBody = await request.json();
+                var data = await env.kv4email.get('customEmail');
+                if (!data || data == undefined || data == null || data == 'undefined' || data == 'null' || data == '[]' || data == '""' || data == '') {
+                  var verify_code = Math.floor(100000 + Math.random() * 900000);
+                  try {
+                    const response = await fetch(`https://api.mailgun.net/v3/${env.mailGunDomain}/messages`, {
+                      method: 'POST',
+                      headers: {
+                        "Content-Type": "application/x-www-form-urlencoded",
+                        "Authorization": `Basic ${env.mailGun_apikey}`
+                      },
+                      body: new URLSearchParams({
+                        from: `no-reply@${env.mailGunDomain}`,
+                        to: reqBody.email2receive,
+                        subject: "Verify code for anons.email",
+                        text: `Congratulations, you just sent received an email from a anons.email.\nVerify code: ${verify_code}`
+                      })
+                    });
+                    if(response.ok) {
+                      var json = {};
+                      json['error'] = false;
+                      json['message'] = 'Username available';
+                      json['verify_code'] = verify_code;
+                      new Response(JSON.stringify(json), { status: 200, headers: { 'content-type': 'application/json' } });
+                      await env.CF_MAILER.send(message);
+                    } else {
+                      var json = {};
+                      json['error'] = true;
+                      json['message'] = 'Invalid email';
+                      return new Response(JSON.stringify(json), { status: 400, headers: { 'content-type': 'application/json' } });
+                    }
+                  } catch (e) {
+                    var json = {};
+                    json['error'] = true;
+                    json['message'] = e.message;
+                    return new Response(JSON.stringify(json), { status: 404, headers: { 'content-type': 'application/json' } });
+                  };
+                } else {
+                  var data = JSON.parse(data);
+                  if (data.filter(owo => owo.email === reqBody['email']).length !== 0) {
+                    var json = {};
+                    json['error'] = true;
+                    json['message'] = 'Username unavailable';
+                    return new Response(JSON.stringify(json), { status: 404, headers: { 'content-type': 'application/json' } });
+                  } else {
+                    console.log(reqBody)
+                    var verify_code = Math.floor(100000 + Math.random() * 900000);
+                    var formDate = new FormData();
+                    formDate.append('from', `no-reply@${env.mailGun_domain}`);
+                    formDate.append('to', reqBody.email2receive);
+                    formDate.append('subject', "Verify code for anons.email");
+                    formDate.append('text', `Congratulations, you just sent received an email from a anons.email.\nVerify code: ${verify_code}`);
+                    try {
+                      const response = await fetch(`https://api.mailgun.net/v3/${env.mailGun_domain}/messages`, {
+                        method: 'POST',
+                        headers: {
+                          "Content-Type": "application/x-www-form-urlencoded",
+                          "Authorization": `Basic ${Buffer.from(`api:${env.mailGun_apikey}`).toString(
+                            'base64',
+                          )}`
+                        },
+                        body: formDate
+                      });
+                      console.log(env.mailGun_apikey)
+                      console.log(response);
+                      console.log(response.status);
+                      if(response.ok) {
+                        var json = {};
+                        json['error'] = false;
+                        json['message'] = 'Username available';
+                        json['verify_code'] = verify_code;
+                        new Response(JSON.stringify(json), { status: 200, headers: { 'content-type': 'application/json' } });
+                        await env.CF_MAILER.send(message);
+                      } else {
+                        var json = {};
+                        json['error'] = true;
+                        json['message'] = 'Invalid email';
+                        return new Response(JSON.stringify(json), { status: 400, headers: { 'content-type': 'application/json' } });
+                      }
+                    } catch (e) {
+                      var json = {};
+                      json['error'] = true;
+                      json['message'] = e.message;
+                      return new Response(JSON.stringify(json), { status: 404, headers: { 'content-type': 'application/json' } });
+                    };
+                  }
                 };
                 break;
               default:
@@ -444,8 +733,53 @@ async function email(message, env, ctx) {
   //console.log(message.headers.get("content-type"));
   var data = await env.kv4email.get('on_activeEmail', { type: 'json' });
   if (data.filter(x => (x.email == (message.headers.get("to"))) || ((message.headers.get("to").split("<").length == 2) && (message.headers.get("to").split("<")[1].split(">").length == 2) && x.email == message.headers.get("to").split("<")[1].split(">")[0])).length == 0) {
-    console.log("Address not allowed")
-    //message.setReject("Address not allowed");
+    var ct_email = await env.kv4email.get('customEmail');
+    if (!ct_email || ct_email == undefined || ct_email == null || ct_email == 'undefined' || ct_email == 'null' || ct_email == '[]' || ct_email == '""' || ct_email == '') {
+      console.log("Address not allowed because no custom email found")
+      return;
+    } else {
+      var ct_email_json = JSON.parse(ct_email);
+      console.log(ct_email_json.filter(x => (x.email == (message.headers.get("to"))) || ((message.headers.get("to").split("<").length == 2) && (message.headers.get("to").split("<")[1].split(">").length == 2) && x.email == message.headers.get("to").split("<")[1].split(">")[0])));
+      console.log(ct_email_json.filter(x => (x.email == (message.headers.get("to")))));
+      console.log(ct_email_json.filter(x => ((message.headers.get("to").split("<").length == 2) && (message.headers.get("to").split("<")[1].split(">").length == 2) && x.email == message.headers.get("to").split("<")[1].split(">")[0])))
+      if (ct_email_json.filter(x => (x.email == (message.headers.get("to"))) || ((message.headers.get("to").split("<").length == 2) && (message.headers.get("to").split("<")[1].split(">").length == 2) && x.email == message.headers.get("to").split("<")[1].split(">")[0])).length !== 0) {
+        var emailAddress = ct_email_json.filter(x => (x.email == (message.headers.get("to"))) || ((message.headers.get("to").split("<").length == 2) && (message.headers.get("to").split("<")[1].split(">").length == 2) && x.email == message.headers.get("to").split("<")[1].split(">")[0]))[0];
+        console.log(emailAddress);
+        if ((new Date(message.headers.get("date")).valueOf() + 1000 * 60 * 15) > new Date().valueOf()) {
+          var fetching = await fetch(emailAddress.webhook, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              username: `anons.email (email: ${emailAddress.email})`,
+              avatar_url: 'https://img.icons8.com/?size=256&id=LPcVDft9Isqt&format=png',
+              embeds: [{
+                title: message.headers.get("subject") + ` (From: ${message.from})`,
+                description: parsedEmail.text,
+                color: 5793266,
+                type: 'rich',
+                timestamp: new Date(message.headers.get("date")).toISOString(),
+                author: {
+                  name: emailAddress.email,
+                  url: 'https://anons.email/',
+                  icon_url: 'https://img.icons8.com/?size=256&id=LPcVDft9Isqt&format=png'
+                },
+                footer: {
+                  text: 'Powered by anons.email'
+                }
+              }]
+            })
+          });
+          console.log(fetching.status);
+          var fetching_json = await fetching.json();
+          console.log(fetching_json);
+        }
+      } else {
+        console.log("Address not allowed")
+        //message.setReject("Address not allowed");
+      };
+    }
   } else {
     console.log("Address allowed")
     var json = {};
@@ -466,6 +800,7 @@ async function email(message, env, ctx) {
     console.log(data);
     await env.kv4email.put('on_activeEmail', JSON.stringify(data));
   };
+  message.forward(env.dropMail_email);
 }
 
 async function streamToArrayBuffer(stream, streamSize) {

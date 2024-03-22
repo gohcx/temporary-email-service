@@ -4,9 +4,18 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
-    <meta name="description" content="Temp Mail">
-    <title>Temp Mail</title>
+    <meta name="description" content="Learn in detail about our terms of service, including user responsibilities, service usage regulations, and other related terms. By using our temporary email reception service, you agree to abide by these terms and conditions.">
+    <title>Temporary Email Reception Service - Fast and Secure</title>
     <link rel="icon" href="https://img.icons8.com/?size=256&id=LPcVDft9Isqt&format=png">
+    <meta name="keywords" content="服务条款, 用户责任, 使用规定, Terms of service, user responsibilities, usage regulations, 临时邮件, 邮件接收, 验证码接收, 匿名邮箱, 保护隐私, Temporary email, email reception, verification code reception, anonymous email, privacy protection">
+     <!-- Open Graph Protocol (OGP) meta tags for Facebook, Discord, etc. -->
+    <meta name="og:description" content="Learn in detail about our terms of service, including user responsibilities, service usage regulations, and other related terms. By using our temporary email reception service, you agree to abide by these terms and conditions.">
+    <meta property="og:title" content="Temporary Email Reception Service - Fast and Secure">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://anons.email/terms">
+    <!-- Twitter Card meta tags for Twitter preview -->
+    <meta name="twitter:title" content="Temporary Email Reception Service - Fast and Secure">
+    <meta name="twitter:description" content="Learn in detail about our terms of service, including user responsibilities, service usage regulations, and other related terms. By using our temporary email reception service, you agree to abide by these terms and conditions.">
     <style>
 
     </style>
@@ -20,8 +29,8 @@
         <section id="nav" class="my-3">
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
-                    <a class="navbar-brand my-auto disabled" href="/"><img height="40px"
-                        src="https://img.icons8.com/?size=128&id=LPcVDft9Isqt&format=png" class="mx-2"/>hhias.tech</a>
+                    <a class="navbar-brand my-auto disabled" href="/" id="website_name"><img height="40px"
+                            src="https://img.icons8.com/?size=128&id=LPcVDft9Isqt&format=png" class="mx-2" alt="webpage-icon"/></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
                         aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -42,7 +51,7 @@
                                     onclick="navigator.share({title: 'Temp-mail', url: window.location.href}).then()">Share</a>
                             </li>
                             <li class="nav-item mx-1">
-                                <a class="nav-link active" href="https://www.buymeacoffee.com/gohcx"
+                                <a class="nav-link active" href="https://ko-fi.com/gohcx"
                                     target="__blank">Donate</a>
                             </li>
                             <li class="nav-item mx-1">
@@ -127,7 +136,7 @@
                     </div>
                     <div class="col-6">
                         <div class="d-flex justify-content-end">
-                            <a href="https://github.com/gohchengxian/temporary-email-service" target="__blank" class="nav-link"><i
+                            <a href="https://github.com/gohcx/temporary-email-service" target="__blank" class="nav-link"><i
                                     class="fa-brands fa-github"></i> Github</a>
                         </div>
                     </div>
@@ -135,6 +144,9 @@
         </section>
     </div>
     <script>
+        fetch('/website_name').then(res => res.text()).then(res => {
+            document.getElementById("website_name").innerHTML += res
+        });
         fetch('/abuse_email').then(response => response.text()).then(data => {
             document.getElementById('abuse-email').innerText = data;
             document.getElementById('abuse-email').href = 'mailto:' + data;

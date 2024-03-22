@@ -4,9 +4,18 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
-    <meta name="description" content="Temp Mail">
-    <title>Temp Mail</title>
+    <meta name="description" content="Learn about our temporary mail receiving service, which is dedicated to providing users with a safe and convenient temporary mailbox solution. Explore our mission, team and how we protect your privacy.">
+    <meta name="keywords" content="About us, company mission, team introduction, privacy protection,临时邮件, 邮件接收, 验证码接收, 匿名邮箱, 保护隐私, Temporary email, email reception, verification code reception, anonymous email, privacy protection">    <title>Temp Mail</title>
     <link rel="icon" href="https://img.icons8.com/?size=256&id=LPcVDft9Isqt&format=png">
+    <!-- Open Graph Protocol (OGP) meta tags for Facebook, Discord, etc. -->
+    <meta name="og:description" content="Learn about our temporary mail receiving service, which is dedicated to providing users with a safe and convenient temporary mailbox solution. Explore our mission, team and how we protect your privacy.">
+    <meta property="og:title" content="Temporary Email Reception Service - Fast and Secure">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://anons.email/about">
+    <!-- Twitter Card meta tags for Twitter preview -->
+    <meta name="twitter:title" content="Temporary Email Reception Service - Fast and Secure">
+    <meta name="twitter:description" content="Learn about our temporary mail receiving service, which is dedicated to providing users with a safe and convenient temporary mailbox solution. Explore our mission, team and how we protect your privacy.">
+
     <style>
 
     </style>
@@ -20,8 +29,8 @@
         <section id="nav" class="my-3">
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
-                    <a class="navbar-brand my-auto disabled" href="/"><img height="40px"
-                        src="https://img.icons8.com/?size=128&id=LPcVDft9Isqt&format=png" class="mx-2"/>hhias.tech</a>
+                    <a class="navbar-brand my-auto disabled" href="/" id="website_name"><img height="40px"
+                        src="https://img.icons8.com/?size=128&id=LPcVDft9Isqt&format=png" class="mx-2" alt="webpage-icon"/></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
                         aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -42,7 +51,7 @@
                                     onclick="navigator.share({title: 'Temp-mail', url: window.location.href}).then()">Share</a>
                             </li>
                             <li class="nav-item mx-1">
-                                <a class="nav-link active" href="https://www.buymeacoffee.com/gohcx"
+                                <a class="nav-link active" href="https://ko-fi.com/gohcx"
                                     target="__blank">Donate</a>
                             </li>
                             <li class="nav-item mx-1">
@@ -72,7 +81,7 @@
                     <div class="col-12">
                         <strong class="h1">Copyright</strong>
                         <hr id="line-3" style="border: 1px solid #000000;" width="50%" />
-                        <p class="my-4 fs-5">Open Source on <a href="https://github.com/gohchengxian/temporary-email-service"
+                        <p class="my-4 fs-5">Open Source on <a href="https://github.com/gohcx/temporary-email-service"
                                 target="__blank">Github</a></p>
                     </div>
                 </div>
@@ -86,7 +95,7 @@
                     </div>
                     <div class="col-6">
                         <div class="d-flex justify-content-end">
-                            <a href="https://github.com/gohchengxian/temporary-email-service" target="__blank" class="nav-link"><i
+                            <a href="https://github.com/gohcx/temporary-email-service" target="__blank" class="nav-link"><i
                                     class="fa-brands fa-github"></i> Github</a>
                         </div>
                     </div>
@@ -94,6 +103,9 @@
         </section>
     </div>
     <script>
+        fetch('/website_name').then(res => res.text()).then(res => {
+            document.getElementById("website_name").innerHTML += res
+        });
         function setCookie(cname, cvalue, exdays) {
             const d = new Date();
             d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));

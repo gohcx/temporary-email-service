@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html id="htmlid" lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="description"
+        content="Learn about our temporary mail receiving service, which is dedicated to providing users with a safe and convenient temporary mailbox solution. Explore our mission, team and how we protect your privacy.">
+    <meta name="keywords"
+        content="About us, company mission, team introduction, privacy protection,临时邮件, 邮件接收, 验证码接收, 匿名邮箱, 保护隐私, Temporary email, email reception, verification code reception, anonymous email, privacy protection">
+    <title>Temp Mail</title>
+    <link rel="icon" href="https://img.icons8.com/?size=256&id=LPcVDft9Isqt&format=png">
+    <!-- Open Graph Protocol (OGP) meta tags for Facebook, Discord, etc. -->
+    <meta name="og:description"
+        content="Learn about our temporary mail receiving service, which is dedicated to providing users with a safe and convenient temporary mailbox solution. Explore our mission, team and how we protect your privacy.">
+    <meta property="og:title" content="Temporary Email Reception Service - Fast and Secure">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://anons.email/about">
+    <!-- Twitter Card meta tags for Twitter preview -->
+    <meta name="twitter:title" content="Temporary Email Reception Service - Fast and Secure">
+    <meta name="twitter:description"
+        content="Learn about our temporary mail receiving service, which is dedicated to providing users with a safe and convenient temporary mailbox solution. Explore our mission, team and how we protect your privacy.">
+
+    <style>
+        .btn-bd-primary {
+            --bs-btn-font-weight: 600 !important;
+            --bs-btn-color: #fff !important;
+            --bs-btn-bg: #5865F2 !important;
+            --bs-btn-border-color: #5865F2 !important;
+            --bs-btn-hover-color: #fff !important;
+            --bs-btn-hover-bg: #4a6ff3 !important;
+            --bs-btn-hover-border-color: #4a6ff3 !important;
+            --bs-btn-focus-shadow-rgb: rgb(114, 137, 218) !important;
+            --bs-btn-active-color: #fff !important;
+            --bs-btn-active-bg: #5865F2 !important;
+            --bs-btn-active-border-color: #5865F2 !important;
+        }
+
+        .btn-bd-purple {
+            --bs-btn-font-weight: 600 !important;
+            --bs-btn-color: #fff !important;
+            --bs-btn-bg: #712cf9 !important;
+            --bs-btn-border-color: #712cf9 !important;
+            --bs-btn-hover-color: #fff !important;
+            --bs-btn-hover-bg: #6528e0 !important;
+            --bs-btn-hover-border-color: #6528e0 !important;
+            --bs-btn-focus-shadow-rgb: rgb(112.520718, 44.062154, 249.437846) !important;
+            --bs-btn-active-color: #fff !important;
+            --bs-btn-active-bg: #5a23c8 !important;
+            --bs-btn-active-border-color: #5a23c8 !important;
+        }
+    </style>
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body id="bodyid">
+    <div class="container">
+        <section id="nav" class="my-3">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand my-auto disabled" href="/" id="website_name"><img height="40px"
+                            src="https://img.icons8.com/?size=128&id=LPcVDft9Isqt&format=png" class="mx-2"
+                            alt="webpage-icon" /></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
+                        aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbar">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item mx-1">
+                                <a class="nav-link active" aria-current="page" href="/about">About</a>
+                            </li>
+                            <li class="nav-item mx-1">
+                                <a class="nav-link active" aria-current="page" href="/privacy">Privacy</a>
+                            </li>
+                            <li class="nav-item mx-1">
+                                <a class="nav-link active" aria-current="page" href="/terms">Terms</a>
+                            </li>
+                            <li class="nav-item mx-1">
+                                <a class="nav-link active" href="#" aria-current="page"
+                                    onclick="navigator.share({title: 'Temp-mail', url: window.location.href}).then()">Share</a>
+                            </li>
+                            <li class="nav-item mx-1">
+                                <a class="nav-link active" href="https://ko-fi.com/gohcx" target="__blank">Donate</a>
+                            </li>
+                            <li class="nav-item mx-1">
+                                <button class="nav-link active" onclick="changeTheme()" href="#">Theme</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <hr id="line-2" style="border: 1px solid #000000;" />
+            <div class="container-fluid" style="height: 10px"></div>
+        </section>
+        <section id="content" class="my-3" style="min-height: 70vh !important;">
+            <div class="container-fluid" style="height: 20px"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="my-3">
+                            <strong class="h1">Custom Email:</strong>
+                            <hr id="line-1" style="border: 1px solid #000000;" width="50%" />
+                            <p class="my-4 fs-5"><a href="/">Tech Mail</a> provide temporary email service</p>
+                            <div class="container-fluid" style="height: 20px"></div>
+                            <!--form -->
+                            <div class="border">
+                                <form action="/custom" method="post" class="mx-3 my-4">
+                                    <div class="mb-3">
+                                        <label for="email-username-input" class="form-label">Email Address</label>
+                                        <input type="text" id="email-username-input" class="form-control" name="email"
+                                            required autocomplete="off" required onchange="check_username()">
+                                        <div class="invalid-feedback" id="email-username-invalid-feedback">
+                                            Please provide a email username.
+                                        </div>
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
+                                        <div class="container-fluid" style="height: 20px"></div>
+                                        <label for="domain-list" class="form-label>">Domain</label>
+                                        <select class="form-select" name="domain" id="domain-list" required>
+                                        </select>
+                                        <div id="emailHelp" class="form-text">We'll never share your email with anyone
+                                            else.
+                                        </div>
+                                        <div class="container-fluid" style="height: 15px"></div>
+                                        <hr />
+                                        <div class="container-fluid" style="height: 15px"></div>
+                                        <h6 id="label-link-with">Link with:</h6>
+                                        <div id="link-with-div">
+                                            <button type="button" onclick="webhook()" class="btn btn-bd-primary"><i
+                                                    class="fa-brands fa-discord me-2"></i>Discord Webhook</button>
+                                            <!--button type="button" onclick="emails()" class="mx-2 btn "
+                                                id="email-button"><i
+                                                    class="fa-light fa-envelope me-2"></i>Email</button-->
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="my-3">
+                            <h1>Why need disposable E-mail?</h1>
+                            <p>Disposable email - is a service that allows to receive email at a temporary address that
+                                self-destructed after a certain time elapses. It is also known by names like : tempmail,
+                                10minutemail, throwaway email, fake-mail or trash-mail. Many forums, Wi-Fi owners,
+                                websites
+                                and blogs ask visitors to register before they can view content, post comments or
+                                download
+                                something. Temp-Mail - is most advanced throwaway email service that helps you avoid
+                                spam
+                                and stay safe.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contents" class="sticky-bottom">
+            <div class="container-fluid" style="height: 40px;"></div>
+            <div class="container fixed-bottom">
+                <div class="row">
+                    <hr />
+                    <div class="col-6">
+                        <p>© 2024 Temp Mail</p>
+                    </div>
+                    <div class="col-6">
+                        <div class="d-flex justify-content-end">
+                            <a href="https://github.com/gohcx/temporary-email-service" target="__blank"
+                                class="nav-link"><i class="fa-brands fa-github"></i> Github</a>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    </div>
+    <script>
+        function check_username() {
+            var email_user_name = document.getElementById("email-username-input").value;
+            const regex = /^[a-z0-9.]+$/i;
+            if (email_user_name.replace(/ /g, "") !== email_user_name || email_user_name.replace(/ /g, "") == "") {
+                document.getElementById("email-username-input").classList.remove("is-valid");
+                document.getElementById("email-username-input").classList.add("is-invalid");
+                document.getElementById('email-username-invalid-feedback').innerText = "Invalid username";
+                return;
+            } else if (email_user_name.split(".").length > 2) {
+                document.getElementById("email-username-input").classList.remove("is-invalid");
+                document.getElementById("email-username-input").classList.add("is-valid");
+                document.getElementById('email-username-invalid-feedback').innerText = "Only 1 dot is allowed";
+                return;
+            } else if (!regex.test(email_user_name)) {
+                document.getElementById("email-username-input").classList.remove("is-invalid");
+                document.getElementById("email-username-input").classList.add("is-valid");
+                document.getElementById('email-username-invalid-feedback').innerText = "Only a-z, 0-9 and dot is allowed";
+                return;
+            }
+            fetch("/check_ct_email", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    "email": email_user_name + "@" + document.getElementById("domain-list").value
+                })
+            }).then(res => res.text()).then(res => {
+                if (res == "Username available") {
+                    document.getElementById("email-username-input").classList.remove("is-invalid");
+                    document.getElementById("email-username-input").classList.add("is-valid");
+                } else if (res == "Username not available") {
+                    document.getElementById("email-username-input").classList.remove("is-valid");
+                    document.getElementById("email-username-input").classList.add("is-invalid");
+                    document.getElementById('email-username-invalid-feedback').innerText = "Invalid username";
+                } else {
+                    document.getElementById("email-username-input").classList.remove("is-valid");
+                    document.getElementById("email-username-input").classList.add("is-invalid");
+                    document.getElementById('email-username-invalid-feedback').innerText = "Invalid username";
+                }
+            })
+        }
+        function webhook() {
+            var email_user_name = document.getElementById("email-username-input").value;
+            if (document.getElementById("email-username-input").classList.contains("is-invalid")) {
+                return;
+            } else if (document.getElementById("email-username-input").classList.contains("is-valid")) {
+            } else {
+                document.getElementById("email-username-input").classList.add("is-invalid");
+                return;
+            };
+            document.getElementById("email-username-input").disabled = true;
+            document.getElementById("domain-list").disabled = true;
+            document.getElementById("label-link-with").innerText = "Discord Webhook URL:";
+            document.getElementById("link-with-div").innerHTML = `
+            <div class="">
+                <input id="connect-link" class="form-control" type="url" placeholder="https://discord.com/api/webhooks/.../..." required>
+                <div class="invalid-feedback" id="webhook-url-invalid-feedback">
+                    You only can use Discord Webhook
+                </div>
+                <div class="valid-feedback">
+                    Webhook exist!
+                </div>
+                <div class="container-fluid" style="height: 15px"></div>
+                <div id="verify-webhook-div"></div>
+                <button type="button" id="connect_webhook_btn" class="btn btn-bd-primary" onclick="verifyWebhook()">Verify Webhook</button>
+                <button type="button" class="btn ${theme === 'dark' ? 'btn-bd-purple' : 'btn-dark'}" id="cancel-button-webhook" onclick="location.reload()">Cancel</button>
+                <div class="container-fluid" style="height: 15px"></div>
+                <div id="alert-div" class="alert alert-warning" role="alert" style="display: none;"></div>
+            </div>`;
+            //alert("This feature is not available yet");
+        };
+        function verifyWebhook() {
+            var webhook_url = document.getElementById("connect-link").value;
+            if (webhook_url == "") {
+                document.getElementById('webhook-url-invalid-feedback').innerText = "Webhook URL is required";
+                document.getElementById("connect-link").classList.add("is-invalid");
+                return;
+            };
+            if (webhook_url.startsWith("https://discord.com/api/webhooks")) {
+                fetch(webhook_url).then(res => res.json()).then(res => {
+                    if (res.code == undefined) {
+                        document.getElementById("connect_webhook_btn").disabled = true;
+                        document.getElementById("connect-link").disabled = true;
+                        document.getElementById("connect_webhook_btn").innerText = "Loading...";
+                        document.getElementById("connect-link").classList.remove("is-invalid");
+                        document.getElementById("connect-link").classList.add("is-valid");
+                        fetch("/verifyWebhook", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify({
+                                "email": document.getElementById("email-username-input").value + "@" + document.getElementById("domain-list").value,
+                                "webhook": webhook_url
+                            })
+                        }).then(res => res.json()).then(res => {
+                            if (res.error) {
+                                document.getElementById("alert-div").style.display = "block";
+                                document.getElementById("alert-div").innerText = res.message;
+                            } else {
+                                console.log(res);
+                                document.getElementById('connect_webhook_btn').innerText = 'Link Webhook';
+                                document.getElementById('connect_webhook_btn').disabled = false;
+                                document.getElementById('connect_webhook_btn').setAttribute("onClick", `connectWebhook('${res.verify_code}')`);
+                                document.getElementById('verify-webhook-div').innerHTML = `
+                                <h6 id="label-link-with">Verify code:</h6>
+                                <input id="verify-code-input" class="form-control" placeholder="xxxxx" required>
+                                <div class="invalid-feedback">
+                                    Invalid code
+                                </div>
+                                <div class="valid-feedback">
+                                    Verified!
+                                </div>
+                                <div class="container-fluid" style="height: 15px"></div>`;
+                            }
+                        });
+                    } else {
+                        document.getElementById('webhook-url-invalid-feedback').innerText = "Invalid Webhook";
+                        document.getElementById("connect-link").classList.remove("is-valid");
+                        document.getElementById("connect-link").classList.add("is-invalid");
+                        return;
+                    };
+                });
+            } else {
+                document.getElementById('webhook-url-invalid-feedback').innerText = "You only can use Discord Webhook";
+                document.getElementById("connect-link").classList.remove("is-valid");
+                document.getElementById("connect-link").classList.add("is-invalid");
+                return;
+            };
+        };
+        function connectWebhook(verify_code) {
+            if (document.getElementById("verify-code-input").value !== verify_code.toString()) {
+                document.getElementById("verify-code-input").classList.remove("is-valid");
+                document.getElementById("verify-code-input").classList.add("is-invalid");
+                return;
+            };
+            document.getElementById("verify-code-input").classList.remove("is-invalid");
+            document.getElementById("verify-code-input").disabled = true;
+            fetch('/connectWebhookCTEmail', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    "email": document.getElementById("email-username-input").value + "@" + document.getElementById("domain-list").value,
+                    "webhook": document.getElementById("connect-link").value
+                })
+            }).then(res => res.json()).then(res => {
+                if (res.error) {
+                    document.getElementById("alert-div").style.display = "block";
+                    document.getElementById("alert-div").classList.remove("alert-warning");
+                    document.getElementById("alert-div").classList.add("alert-danger");
+                    document.getElementById("alert-div").innerText = res.error;
+                } else {
+                    document.getElementById("alert-div").style.display = "block";
+                    document.getElementById("alert-div").classList.remove("alert-warning");
+                    document.getElementById("alert-div").classList.add("alert-success");
+                    document.getElementById("alert-div").innerText = "Webhook connected!";
+                }
+            });
+        }
+        function emails() {
+            if (document.getElementById("email-username-input").classList.contains("is-invalid")) {
+                return;
+            } else if (document.getElementById("email-username-input").classList.contains("is-valid")) {
+            } else {
+                document.getElementById("email-username-input").classList.add("is-invalid");
+                return;
+            };
+            document.getElementById("email-username-input").disabled = true;
+            document.getElementById("domain-list").disabled = true;
+            document.getElementById("label-link-with").innerText = "Email Address:";
+            var theme = getCookie("theme");
+            document.getElementById("link-with-div").innerHTML = `
+            <div class="">
+                <input id="connect-email" class="form-control" type="email" placeholder="admin@anons.email" required>
+                <div class="invalid-feedback" id="email-invalid-feedback">
+                    You only can use Email
+                </div>
+                <div class="valid-feedback">
+                    Email exist!
+                </div>
+                <div class="container-fluid" style="height: 15px"></div>
+                <div id="verify-email-div"></div>
+                <button type="button" id="connect_email_btn" class="btn btn-bd-primary" onclick="verifyEmail()">Verify Email</button>
+                <button type="button" class="btn ${theme === 'dark' ? 'btn-bd-purple' : 'btn-dark'} text-light" id="cancel-button-email" onclick="location.reload()">Cancel</button>
+                <div class="container-fluid" style="height: 15px"></div>
+                <div id="alert-div-email" class="alert alert-warning" role="alert" style="display: none;"></div>
+            </div>`;
+            //alert("This feature is not available yet");
+        };
+        function verifyEmail() {
+            var email = document.getElementById("connect-email").value;
+            if (email == "") {
+                document.getElementById('email-invalid-feedback').innerText = "Email is required";
+                document.getElementById("connect-link").classList.add("is-invalid");
+                return;
+            };
+            const regex = /^[a-z0-9.]+$/i;
+            if (email.split("@").length === 2 && regex.test(email.split("@")[0]) && email.split("@")[0].split(".").length <= 2) {
+                document.getElementById("connect_email_btn").disabled = true;
+                document.getElementById("connect-email").disabled = true;
+                document.getElementById("connect_email_btn").innerText = "Loading...";
+                fetch("/verifyEmail", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        "email2receive": email,
+                        "email": document.getElementById("email-username-input").value + "@" + document.getElementById("domain-list").value
+                    })
+                }).then(res => res.json()).then(res => {
+                    if (res.error) {
+                        document.getElementById("alert-div-email").style.display = "block";
+                        document.getElementById("alert-div-email").classList.remove("alert-warning");
+                        document.getElementById("alert-div-email").classList.add("alert-danger");
+                        document.getElementById("alert-div-email").innerText = res.message;
+                        document.getElementById('connect_email_btn').innerText = 'Verify Email';
+                        document.getElementById('connect_email_btn').disabled = false;
+                    } else {
+                        document.getElementById("connect-email").classList.remove("is-invalid");
+                        document.getElementById("connect-email").classList.add("is-valid");
+                        document.getElementById('connect_email_btn').innerText = 'Link Email';
+                        document.getElementById('connect_email_btn').disabled = false;
+                        document.getElementById('connect_email_btn').setAttribute("onClick", `connectEmail('${res.verify_code}')`);
+                        document.getElementById('verify-email-div').innerHTML = `
+                        <h6 id="label-link-with">Verify code:</h6>
+                        <input id="verify-code-input" class="form-control" placeholder="xxxxx" required>
+                        <div class="invalid-feedback">
+                            Invalid code
+                        </div>
+                        <div class="valid-feedback">
+                            Verified!
+                        </div>
+                        <div class="container-fluid" style="height: 15px"></div>`;
+                    }
+                }).catch(e => {
+                    document.getElementById("alert-div-email").style.display = "block";
+                    document.getElementById("alert-div-email").classList.remove("alert-warning");
+                    document.getElementById("alert-div-email").classList.add("alert-danger");
+                    document.getElementById("alert-div-email").innerText = "Error: " + e;
+                    document.getElementById('connect_email_btn').innerText = 'Verify Email';
+                    document.getElementById('connect_email_btn').disabled = false;
+                });
+            } else {
+                document.getElementById('email-invalid-feedback').innerText = "Invalid Email format";
+                document.getElementById("connect-email").classList.remove("is-valid");
+                document.getElementById("connect-email").classList.add("is-invalid");
+                return;
+            }
+        };
+        function connectEmail(verify_code) {
+            document.getElementById('connect_email_btn').disabled = true;
+            if(document.getElementById('verify-code-input').value !== verify_code.toString()) {
+                document.getElementById('verify-code-input').classList.remove("is-valid");
+                document.getElementById('verify-code-input').classList.add("is-invalid");
+                document.getElementById('connect_email_btn').disabled = false;
+                return;
+            };
+            document.getElementById('verify-code-input').classList.remove("is-invalid");
+            document.getElementById('verify-code-input').disabled = true;
+            fetch('/connectEmailCTEmail', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    "email": document.getElementById("email-username-input").value + "@" + document.getElementById("domain-list").value,
+                    "email2receive": document.getElementById("connect-email").value
+                })
+            }).then(res => res.json()).then(res => {
+                if (res.error) {
+                    document.getElementById("alert-div-email").style.display = "block";
+                    document.getElementById("alert-div-email").classList.remove("alert-warning");
+                    document.getElementById("alert-div-email").classList.add("alert-danger");
+                    document.getElementById("alert-div-email").innerText = res.message;
+                } else {
+                    document.getElementById("alert-div-email").style.display = "block";
+                    document.getElementById("alert-div-email").classList.remove("alert-warning");
+                    document.getElementById("alert-div-email").classList.add("alert-success");
+                    document.getElementById("alert-div-email").innerText = "Email connected!";
+                }
+            }).catch(e => {
+                document.getElementById("alert-div-email").style.display = "block";
+                document.getElementById("alert-div-email").classList.remove("alert-warning");
+                document.getElementById("alert-div-email").classList.add("alert-danger");
+                document.getElementById("alert-div-email").innerText = "Error: " + e;
+            });
+        }
+        fetch('/custom_mail_info').then(res => res.json()).then(res => {
+            console.log(res);
+            res.email_domain.forEach(element => {
+                document.getElementById("domain-list").innerHTML += `<option value="${element}">${element}</option>`;
+            });
+            document.getElementById("website_name").innerHTML += res.website_name;
+        });
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+        let theme = getCookie("theme");
+        if (theme == "dark") {
+            document.getElementById("line-1").style.border = "1px solid #ffffff";
+            document.getElementById("line-2").style.border = "1px solid #ffffff";
+            document.getElementById("email-button")?.classList?.add("btn-bd-purple");
+            document.getElementById("cancel-button-email")?.classList?.add("btn-bd-purple");
+            document.getElementById("cancel-button-webhook")?.classList?.add("btn-bd-purple");
+            document.getElementById("bodyid").setAttribute("data-bs-theme", "dark");
+        } else {
+            document.getElementById("line-1").style.border = "1px solid #000000";
+            document.getElementById("line-2").style.border = "1px solid #000000";
+            document.getElementById("email-button")?.classList?.add("btn-dark");
+            document.getElementById("cancel-button-email")?.classList?.add("btn-dark");
+            document.getElementById("cancel-button-webhook")?.classList?.add("btn-dark");
+            document.getElementById("bodyid").setAttribute("data-bs-theme", "light");
+        }
+        function changeTheme() {
+            let theme = getCookie("theme");
+            if (theme == "dark") {
+                setCookie("theme", "light", 365);
+                document.getElementById("line-1").style.border = "1px solid #000000";
+                document.getElementById("line-2").style.border = "1px solid #000000";
+                document.getElementById("email-button")?.classList?.add("btn-dark");
+                document.getElementById("email-button")?.classList?.remove("btn-bd-purple");
+                document.getElementById("cancel-button-email")?.classList?.add("btn-dark");
+                document.getElementById("cancel-button-email")?.classList?.remove("btn-bd-purple");
+                document.getElementById("cancel-button-webhook")?.classList?.add("btn-dark");
+                document.getElementById("cancel-button-webhook")?.classList?.remove("btn-bd-purple");
+                document.getElementById("bodyid").setAttribute("data-bs-theme", "light");
+            } else {
+                setCookie("theme", "dark", 365);
+                document.getElementById("line-1").style.border = "1px solid #ffffff";
+                document.getElementById("line-2").style.border = "1px solid #ffffff";
+                document.getElementById("email-button")?.classList?.remove("btn-dark");
+                document.getElementById("email-button")?.classList?.add("btn-bd-purple");
+                document.getElementById("cancel-button-email")?.classList?.add("btn-bd-purple");
+                document.getElementById("cancel-button-email")?.classList?.remove("btn-dark");
+                document.getElementById("cancel-button-webhook")?.classList?.add("btn-bd-purple");
+                document.getElementById("cancel-button-webhook")?.classList?.remove("btn-dark");
+                document.getElementById("bodyid").setAttribute("data-bs-theme", "dark");
+            }
+        }
+    </script>
+</body>
+
+</html>
