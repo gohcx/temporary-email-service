@@ -71,7 +71,7 @@ npx wrangler deploy
 [![Star Rating](https://api.star-history.com/svg?repos=gohcx/temporary-email-service&type=Date)](https://star-history.com/#gohcx/temporary-email-service&Date)
 
 ## 赞助
-<img src="https://assets-global.website-files.com/5c14e387dab576fe667689cf/64f1a9ddd0246590df69ea06_kofi_short_button_white%402x.png" width="30%"/>
+<a href="https://ko-fi.com/gohcx" target="__blank" ><img src="https://assets-global.website-files.com/5c14e387dab576fe667689cf/64f1a9ddd0246590df69ea06_kofi_short_button_white%402x.png" width="30%"/></a>
 
 ## 项目灵感来源
  - [Email.ml](https://email.ml) 十分简洁的临时邮件！！
